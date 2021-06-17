@@ -1,0 +1,21 @@
+.students{
+    margin: 20px;
+    padding: 10px;
+    /* padding-bottom: 25px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    width: fit-content;
+    /* border-top: blanchedalmond 1px solid;
+    border-left: blanchedalmond 1px solid;
+    background: linear-gradient(to top , #f3b8e91a,#b3f7cd75);
+    backdrop-filter: blur(30px);
+    box-shadow:   5px 5px 20px #030303;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px; */
+}

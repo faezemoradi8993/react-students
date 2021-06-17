@@ -1,0 +1,95 @@
+.student {
+    margin               : 20px;
+    padding              : 20px;
+    width                : 300px;
+    color                : rgba(255, 255, 255, 0.8);
+    font-size            : 14px;
+    text-align           : center;
+    background-image     : linear-gradient(rgba(248, 184, 240, 0.753), rgba(63, 114, 109, 0.548));
+    box-shadow           : 0px 5px 15px 1px rgb(0 0 0 / 30%), inset -1px -1px 20px 1px rgb(0 0 0 / 10%);
+    border               : none;
+    border-top           : 1px solid rgba(255, 255, 255, 0.5);
+    border-left          : 1px solid rgba(252, 251, 251, 0.5);
+    user-select          : none;
+    border-radius        : 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius   : 10px;
+    -ms-border-radius    : 10px;
+    -o-border-radius     : 10px;
+    transition           : all 0.3s ease;
+    -webkit-transition   : all 0.3s ease;
+    -moz-transition      : all 0.3s ease;
+    -ms-transition       : all 0.3s ease;
+    -o-transition        : all 0.3s ease;
+}
+
+.student:hover {
+    transition: all 0.3s ease;
+    box-shadow: 0px 15px 20px 4px rgb(0 0 0 /60%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition   : all 0.3s ease;
+    -ms-transition    : all 0.3s ease;
+    -o-transition     : all 0.3s ease;
+}
+
+.student h1 {
+    color        : black;
+    font-size: 16px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.student label {
+    display      : block;
+    margin-bottom: 7px;
+ color: rgba(63, 71, 71, 0.664);
+}
+
+.student input {
+    outline: none;
+      width: 75%;
+    height: 35px;
+    border: 2px solid rgba(255, 255, 255, 0.349);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.527);
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+.student input:focus {
+    color: rgba(255, 255, 255, 0.827);
+    border: 2px solid rgba(206, 25, 176, 0.986);
+ 
+    font-weight: 600;
+    /* background-image: linear-gradient(rgba(206, 25, 176, 0.288),rgba(255, 255, 255, 0.288),rgba(206, 25, 176, 0.288)); */
+   box-shadow: inset 0px 0px 15px 2px rgb(104, 34, 104);
+}
+.deleteStudent{
+    width: fit-content;
+    margin: 0 auto;
+    color:rgb(255, 253, 253) !important;
+    background-color: rgba(243, 114, 114, 0.692);
+    font-weight: 900;
+    font-size: 16px;
+    padding: 7px 10px;
+    margin-top: 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.deleteStudent:hover{
+    background-color: rgba(243, 114, 114, 0.932);
+}
