@@ -1,4 +1,6 @@
 ![Image of Yaktocat](http://www.upsara.com/images/x847660_.png)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=faezemoradi8993&hide=contribs,prs)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
