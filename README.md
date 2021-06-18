@@ -1,5 +1,10 @@
 ![Image of Yaktocat](http://www.upsara.com/images/x847660_.png)
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=faezemoradi8993&hide=contribs,prs)
+
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=faezemoradi8993&show_icons=true&theme=radical)
+# Blog posts
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
+
 
 # Getting Started with Create React App
 
