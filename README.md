@@ -1,3 +1,4 @@
+![Image of Yaktocat](http://www.upsara.com/images/x847660_.png)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
