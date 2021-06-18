@@ -1,7 +1,12 @@
-.student {
+.newstudent{
     margin               : 20px auto;
     padding              : 20px;
-    width                : 300px;
+    width                : 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 20px;
     color                : rgba(255, 255, 255, 0.8);
     font-size            : 14px;
     text-align           : center;
@@ -22,30 +27,20 @@
     -ms-transition       : all 0.3s ease;
     -o-transition        : all 0.3s ease;
 }
-
-.student:hover {
-    transition: all 0.3s ease;
-    box-shadow: 0px 15px 20px 4px rgb(0 0 0 /60%);
-    -webkit-transition: all 0.3s ease;
-    -moz-transition   : all 0.3s ease;
-    -ms-transition    : all 0.3s ease;
-    -o-transition     : all 0.3s ease;
-}
-
-.student h1 {
+.newstudent h1 {
     color        : black;
     font-size: 16px;
     font-weight: 900;
     margin-bottom: 20px;
 }
 
-.student label {
+.newstudent label {
     display      : block;
     margin-bottom: 7px;
  color: rgba(63, 71, 71, 0.664);
 }
 
-.student input {
+.newstudent input {
     outline: none;
       width: 75%;
     height: 35px;
@@ -66,11 +61,11 @@
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
 }
-.student input:focus {
+.newstudent input:focus {
     color: rgba(255, 255, 255, 0.827);
-    border: 2px solid rgba(206, 25, 176, 0.986);
+    border: 2px solid rgba(30, 148, 40, 0.986);
  
     font-weight: 600;
     /* background-image: linear-gradient(rgba(206, 25, 176, 0.288),rgba(255, 255, 255, 0.288),rgba(206, 25, 176, 0.288)); */
-   box-shadow: inset 0px 0px 15px 2px rgb(104, 34, 104);
+   box-shadow: inset 0px 0px 15px 2px rgb(240, 245, 241);
 }

@@ -1,57 +1,109 @@
-import React, { useState } from 'react';
-import './App.css';
-import Students from './components/students/Students'
+import React, { useState } from "react";
+import "./App.css";
+import Students from "./components/students/Students";
+import Button from "./components/layout/button/Button";
+import NewStudent from "./components/newStudent/NewStudent"
+
 
 function App() {
+  // states
   const [studentsState, setStudents] = useState([
-    { id: 1, name: "reza", grade: 20, email: "faeze.moradi8993@hmail.com" },
-    { id: 2, name: "ali", grade: 19, email: "fateme.nosrati@hmail.com" },
-    { id: 3, name: "mohammad", grade: 20, email: "ali.masoomi@hmail.com" },
-    { id: 4, name: "hosein", grade: 18, email: "reza.raisi@hmail.com" }
+    { id: 0, name: "reza", grade: 20, email: "faeze.moradi8993@hmail.com" },
+    { id: 1, name: "ali", grade: 19, email: "fateme.nosrati@hmail.com" },
+    { id: 2, name: "mohammad", grade: 20, email: "ali.masoomi@hmail.com" },
+    { id: 3, name: "hosein", grade: 18, email: "reza.raisi@hmail.com" },
   ]);
+  const [toggle, setToggle] = useState(false);
+  const [studentName , setStudentName]=useState("");
+  const [studentGrade , setStudentGrade]=useState("");
+  const [studentEmail , setStudentEmail]=useState("");
+
+
+  // event handlers
+  // changeNameHandler
   const changeNameHandler = (event, id) => {
-    const index = studentsState.findIndex(p => p.id === id);
+    const index = studentsState.findIndex((p) => p.id === id);
     const newStudents = [...studentsState];
     const newData = event.target.value;
     newStudents[index].name = newData;
     setStudents(newStudents);
-
-  }
+  };
+  // changeGradeHandler
   const changeGradeHandler = (event, id) => {
-    const index = studentsState.findIndex(p => p.id === id);
+    const index = studentsState.findIndex((p) => p.id === id);
     const newStudents = [...studentsState];
     const newData = event.target.value;
     newStudents[index].grade = newData;
     setStudents(newStudents);
+  };
 
-  }
+  // changeEmailHandler
   const changeEmailHandler = (event, id) => {
-    const index = studentsState.findIndex(p => p.id === id);
+    const index = studentsState.findIndex((p) => p.id === id);
     const newStudents = [...studentsState];
     const newData = event.target.value;
     newStudents[index].email = newData;
     setStudents(newStudents);
+  };
 
-  }
+  // deleteStudentHandler
   const deleteStudentHandler = (index) => {
     const newStudents = [...studentsState];
     newStudents.splice(index, 1);
     setStudents(newStudents);
+  };
 
-  }
+  // change display handler (toggle)
+  const toggleHandler = () => {
+    console.log(toggle);
+    setToggle(!toggle);
+  };
+   const setNameHandler =(event)=>{
+    setStudentName(event.target.value);
+   }
+   const setGradeHandler =(event)=>{
+    setStudentGrade(event.target.value);
+   }
+   const setEmailHandler =(event)=>{
+    setStudentEmail(event.target.value);
+   }
+   const addNewStudent=()=>{
+     const newStudents=[...studentsState]
+     newStudents.push(
+      {"id": studentsState.length ,
+      "name":studentName,
+      "grade":studentGrade,
+      "email":studentEmail} 
+     )
+     setStudents(newStudents);
+     setStudentName("");
+     setStudentGrade("");
+     setStudentEmail("");
+   }
+
 
   return (
     <div className="app">
+      <NewStudent 
+      studentName={studentName}
+      studentGrade={studentGrade}
+      studentEmail={studentEmail}
+      setNameHandler={setNameHandler}
+      setGradeHandler={setGradeHandler}
+      setEmailHandler={setEmailHandler}
+      addNewStudent={addNewStudent}
+      />
+     <Button btnType="success" clicked={toggleHandler}>تغییر نمایش</Button>
       <Students
         students={studentsState}
         onechangeName={changeNameHandler}
         onechangeGrade={changeGradeHandler}
         onechangeEmail={changeEmailHandler}
-        ondeleteStudent={deleteStudentHandler} />
-      {console.log(studentsState)}
+        clicked={deleteStudentHandler}
+        toggle={toggle}
+      />
     </div>
   );
 }
 
 export default App;
-

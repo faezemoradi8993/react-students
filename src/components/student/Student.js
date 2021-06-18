@@ -1,7 +1,9 @@
 import React from 'react'
+import Button from "../layout/button/Button"
 import "./Student.css"
 
-const Student = ({ id, name, grade, email, onechangeName, onechangeGrade, onechangeEmail, ondeleteStudent }) => {
+
+const Student = ({ id, name, grade, email, onechangeName, onechangeGrade, onechangeEmail, clicked }) => {
     return (
         <div className="student">
             <h1>student  {id}</h1>
@@ -11,7 +13,8 @@ const Student = ({ id, name, grade, email, onechangeName, onechangeGrade, onecha
             <input type="number" value={grade} onChange={(event) => onechangeGrade(event)} />
             <label> email </label>
             <input type="email" value={email} onChange={(event) => onechangeEmail(event)} />
-            <label className="deleteStudent" onClick={ondeleteStudent}> delete </label>
+            <Button clicked={clicked} btnType="danger">Delete</Button>
+     
         </div>
     )
 }
