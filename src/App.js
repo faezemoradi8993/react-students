@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Students from "./components/students/Students";
 import Button from "./components/layout/button/Button";
-import NewStudent from "./components/newStudent/NewStudent"
-
+import NewStudent from "./components/newStudent/NewStudent";
 
 function App() {
   // states
@@ -13,13 +12,13 @@ function App() {
     { id: 2, name: "mohammad", grade: 20, email: "ali.masoomi@hmail.com" },
     { id: 3, name: "hosein", grade: 18, email: "reza.raisi@hmail.com" },
   ]);
-  const [toggle, setToggle] = useState(false);
-  const [studentName , setStudentName]=useState("");
-  const [studentGrade , setStudentGrade]=useState("");
-  const [studentEmail , setStudentEmail]=useState("");
-
+  const [toggle, setToggle] = useState(true); //for change display
+  const [studentName, setStudentName] = useState(""); //for add new student
+  const [studentGrade, setStudentGrade] = useState(""); //for add new student
+  const [studentEmail, setStudentEmail] = useState(""); //for add new student
 
   // event handlers
+
   // changeNameHandler
   const changeNameHandler = (event, id) => {
     const index = studentsState.findIndex((p) => p.id === id);
@@ -58,42 +57,45 @@ function App() {
     console.log(toggle);
     setToggle(!toggle);
   };
-   const setNameHandler =(event)=>{
-    setStudentName(event.target.value);
-   }
-   const setGradeHandler =(event)=>{
-    setStudentGrade(event.target.value);
-   }
-   const setEmailHandler =(event)=>{
-    setStudentEmail(event.target.value);
-   }
-   const addNewStudent=()=>{
-     const newStudents=[...studentsState]
-     newStudents.push(
-      {"id": studentsState.length ,
-      "name":studentName,
-      "grade":studentGrade,
-      "email":studentEmail} 
-     )
-     setStudents(newStudents);
-     setStudentName("");
-     setStudentGrade("");
-     setStudentEmail("");
-   }
 
+  //add new student handlers
+  const setNameHandler = (event) => {
+    setStudentName(event.target.value);
+  };
+  const setGradeHandler = (event) => {
+    setStudentGrade(event.target.value);
+  };
+  const setEmailHandler = (event) => {
+    setStudentEmail(event.target.value);
+  };
+  const addNewStudent = () => {
+    const newStudents = [...studentsState];
+    newStudents.push({
+      id: studentsState.length,
+      name: studentName,
+      grade: studentGrade,
+      email: studentEmail,
+    });
+    setStudents(newStudents);
+    setStudentName("");
+    setStudentGrade("");
+    setStudentEmail("");
+  };
 
   return (
     <div className="app">
-      <NewStudent 
-      studentName={studentName}
-      studentGrade={studentGrade}
-      studentEmail={studentEmail}
-      setNameHandler={setNameHandler}
-      setGradeHandler={setGradeHandler}
-      setEmailHandler={setEmailHandler}
-      addNewStudent={addNewStudent}
+      <NewStudent
+        studentName={studentName}
+        studentGrade={studentGrade}
+        studentEmail={studentEmail}
+        setNameHandler={setNameHandler}
+        setGradeHandler={setGradeHandler}
+        setEmailHandler={setEmailHandler}
+        addNewStudent={addNewStudent}
       />
-     <Button btnType="success" clicked={toggleHandler}>تغییر نمایش</Button>
+      <Button btnType="success" clicked={toggleHandler}>
+        Change Display
+      </Button>
       <Students
         students={studentsState}
         onechangeName={changeNameHandler}

@@ -1,20 +1,19 @@
-.students{
-    margin: 20px auto;
+.students {
+    margin : 20px auto;
     padding: 10px;
-    width: 80%;
-}
-.other-display-students{
-    margin: 20px auto;
-    padding: 10px;
-    width: 80%;
-      display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    width  : 80%;
 }
 
-@media(min-width:500px){
-    .students{
+.other-display-students {
+    width          : 80%;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    flex-wrap      : wrap;
+}
+
+@media(min-width:500px) {
+    .students {
         width: 450px;
     }
 }

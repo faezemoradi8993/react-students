@@ -10,9 +10,9 @@ const Button = (props) => {
     case "success":
       classes.push("success");
       break;
-      case "primery":
-        classes.push("primery");
-        break;
+    case "primery":
+      classes.push("primery");
+      break;
     default:
       break;
   }

@@ -1,12 +1,12 @@
-.newstudent{
+.newstudent {
     margin               : 20px auto;
-    padding              : 20px;
+    padding              : 10px;
     width                : 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding-bottom: 20px;
+    display              : flex;
+    align-items          : center;
+    justify-content      : center;
+    flex-direction       : column;
+    padding-bottom       : 20px;
     color                : rgba(255, 255, 255, 0.8);
     font-size            : 14px;
     text-align           : center;
@@ -27,45 +27,47 @@
     -ms-transition       : all 0.3s ease;
     -o-transition        : all 0.3s ease;
 }
+
 .newstudent h1 {
     color        : black;
-    font-size: 16px;
-    font-weight: 900;
+    font-size    : 30px;
+    font-weight  : 900;
     margin-bottom: 20px;
 }
 
 .newstudent label {
     display      : block;
     margin-bottom: 7px;
- color: rgba(63, 71, 71, 0.664);
+    color        : rgba(63, 71, 71, 0.664);
 }
 
 .newstudent input {
-    outline: none;
-      width: 75%;
-    height: 35px;
-    border: 2px solid rgba(255, 255, 255, 0.349);
-    background: transparent;
-    color: rgba(255, 255, 255, 0.527);
-    text-align: center;
-    padding: 5px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    outline              : none;
+    width                : 75%;
+    height               : 35px;
+    border               : 2px solid rgba(255, 255, 255, 0.349);
+    background           : transparent;
+    color                : rgba(255, 255, 255, 0.527);
+    text-align           : center;
+    padding              : 5px;
+    margin-bottom        : 20px;
+    border-radius        : 8px;
     -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-    transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
+    -moz-border-radius   : 8px;
+    -ms-border-radius    : 8px;
+    -o-border-radius     : 8px;
+    transition           : all 0.3s ease;
+    -webkit-transition   : all 0.3s ease;
+    -moz-transition      : all 0.3s ease;
+    -ms-transition       : all 0.3s ease;
+    -o-transition        : all 0.3s ease;
 }
+
 .newstudent input:focus {
-    color: rgba(255, 255, 255, 0.827);
+    color : rgba(255, 255, 255, 0.827);
     border: 2px solid rgba(30, 148, 40, 0.986);
- 
-    font-weight: 600;
+
+    font-weight        : 600;
     /* background-image: linear-gradient(rgba(206, 25, 176, 0.288),rgba(255, 255, 255, 0.288),rgba(206, 25, 176, 0.288)); */
-   box-shadow: inset 0px 0px 15px 2px rgb(240, 245, 241);
+    box-shadow         : inset 0px 0px 15px 2px rgb(240, 245, 241);
 }

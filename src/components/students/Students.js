@@ -7,8 +7,10 @@ const Students = ({
   onechangeGrade,
   onechangeEmail,
   clicked,
-  students,toggle
+  students,
+  toggle,
 }) => {
+  //for change display i used toggle
   if (toggle) {
     return (
       <div className="other-display-students">
