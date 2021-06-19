@@ -24,7 +24,7 @@ const Students = ({
             onechangeName={(event) => onechangeName(event, student.id)}
             onechangeGrade={(event) => onechangeGrade(event, student.id)}
             onechangeEmail={(event) => onechangeEmail(event, student.id)}
-            clicked={() => clicked( student.id)}
+            clicked={() => clicked(index)}
           />
         ))}
       </div>
