@@ -14,9 +14,9 @@ const Students = ({
   if (toggle) {
     return (
       <div className="other-display-students">
-        {students.map((student) => (
+        {students.map((student,index) => (
           <Student
-            key={student.id}
+            key={index}
             id={student.id}
             name={student.name}
             grade={student.grade}
@@ -24,7 +24,7 @@ const Students = ({
             onechangeName={(event) => onechangeName(event, student.id)}
             onechangeGrade={(event) => onechangeGrade(event, student.id)}
             onechangeEmail={(event) => onechangeEmail(event, student.id)}
-            clicked={clicked}
+            clicked={() => clicked( student.id)}
           />
         ))}
       </div>

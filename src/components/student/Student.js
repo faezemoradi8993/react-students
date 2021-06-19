@@ -14,7 +14,6 @@ const Student = ({ id, name, grade, email, onechangeName, onechangeGrade, onecha
             <label> email </label>
             <input type="email" value={email} onChange={(event) => onechangeEmail(event)} />
             <Button clicked={clicked} btnType="danger">Delete</Button>
-     
         </div>
     )
 }

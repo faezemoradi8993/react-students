@@ -46,9 +46,10 @@ function App() {
   };
 
   // deleteStudentHandler
-  const deleteStudentHandler = (index) => {
+  const deleteStudentHandler = (id) => {
+    console.log(id);
     const newStudents = [...studentsState];
-    newStudents.splice(index, 1);
+    newStudents.splice(id, 1);
     setStudents(newStudents);
   };
 
