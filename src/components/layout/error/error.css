@@ -1,0 +1,17 @@
+.error{
+    font-size: 18px;
+    margin-top: 10px;
+    background-color: transparent!important;
+}
+.danger{
+    color: rgb(243, 108, 108);
+  }
+
+  .success{
+    color: rgb(245, 111, 238);
+  }
+
+  .primery{
+    color: rgb(30, 148, 40);
+  }
+ 

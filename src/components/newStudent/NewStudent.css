@@ -38,6 +38,7 @@
 .newstudent label {
     display      : block;
     margin-bottom: 7px;
+    margin-top        : 20px;
     color        : rgba(63, 71, 71, 0.664);
 }
 
@@ -50,7 +51,7 @@
     color                : rgba(255, 255, 255, 0.527);
     text-align           : center;
     padding              : 5px;
-    margin-bottom        : 20px;
+
     border-radius        : 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius   : 8px;

@@ -1,10 +1,11 @@
 import React from "react";
-import "./button.css";
+import "./error.css";
 
 
-const Button = (props) => {
-  let classes = ["button"];
-  switch (props.btnType) {
+
+const Error = (props) => {
+  let classes = ["error"];
+  switch (props.errorType) {
     case "danger":
       classes.push("danger");
       break;
@@ -19,10 +20,10 @@ const Button = (props) => {
   }
 
   return (
-    <button className={classes.join(" ")} onClick={props.clicked}>
+    <p className={classes.join(" ")} onClick={props.clicked}>
       {props.children}
-    </button>
+    </p>
   );
 };
 
-export default Button;
+export default Error;

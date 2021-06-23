@@ -1,6 +1,7 @@
 import React from "react";
 import "./NewStudent.css";
 import Button from "../layout/button/Button";
+import Error from "../layout/error/Error";
 
 const NewStudent = ({
   studentName,
@@ -22,6 +23,7 @@ const NewStudent = ({
           setNameHandler(event);
         }}
       />
+      {studentName.length <=0 ? <Error errorType="danger">نام را وارد کنید</Error> : null}
       <label> grade </label>
       <input
         type="number"
@@ -30,6 +32,7 @@ const NewStudent = ({
           setGradeHandler(event);
         }}
       />
+      {studentGrade.length <=0 ?  <Error errorType="danger">نمره را وارد کنید</Error>:null}
       <label> email </label>
       <input
         type="email"
@@ -38,6 +41,7 @@ const NewStudent = ({
           setEmailHandler(event);
         }}
       />
+       {studentEmail.length <=0 ? <Error errorType="danger">ایمیل را وارد کنید</Error>:null}
       <Button clicked={addNewStudent} btnType="primery">
         Add
       </Button>

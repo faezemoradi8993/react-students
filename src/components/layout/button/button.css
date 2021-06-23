@@ -6,7 +6,7 @@
     margin: 10px ;
     text-align: center;
     width: 150px;
-    color: white;
+    color: white !important;
     font: inherit;
     box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.514);
     transition: all 0.5s ease;
@@ -26,21 +26,21 @@
     outline: none;
 }
 .danger{
-  background-color: rgba(238, 26, 26, 0.3);
-}
-.danger:active,.danger:hover{
-    background-color: rgb(243, 108, 108);
-
+    background-color: rgba(238, 26, 26, 0.3);
   }
-.success{
-    background-color: rgba(241, 48, 232, 0.3);
-}
-.success:active,.success:hover{
-    background-color: rgb(245, 111, 238);
-}
-.primery{
-    background-color: rgba(30, 148, 40, 0.3);
-}
-.primery:active,.primery:hover{
-    background-color: rgb(30, 148, 40);
-}
+  .danger:active,.danger:hover{
+      background-color: rgb(243, 108, 108);
+  
+    }
+  .success{
+      background-color: rgba(241, 48, 232, 0.3);
+  }
+  .success:active,.success:hover{
+      background-color: rgb(245, 111, 238);
+  }
+  .primery{
+      background-color: rgba(30, 148, 40, 0.3);
+  }
+  .primery:active,.primery:hover{
+      background-color: rgb(30, 148, 40);
+  }
