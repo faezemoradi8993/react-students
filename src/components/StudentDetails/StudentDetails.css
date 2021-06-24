@@ -1,0 +1,27 @@
+
+.studentDetials{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Detials{
+
+    width: 500px;
+ padding: 20px;
+    margin: 0 auto;
+    background-color:rgb(72, 144, 167) ;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.Detials h2{
+    font-size: 20px; 
+}

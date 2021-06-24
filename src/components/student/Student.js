@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../layout/button/Button";
 import "./Student.css";
-import { Link  , BrowserRouter as Router} from "react-router-dom";
+import {  BrowserRouter as Router} from "react-router-dom";
 // import { Router ,Route } from "react-router";
 
 
@@ -18,6 +18,7 @@ const Student = ({
 }) => {
   return (
     <div className="student">
+        <Router >
       <h1>student {id}</h1>
       <label> name </label>
       <input
@@ -40,13 +41,13 @@ const Student = ({
       <Button clicked={clicked} btnType="danger">
         Delete
       </Button>
-      <Router >
     
-        <Link to={`/StudentDetails/${id}`}>
+    
+        {/* <Link to={`/StudentDetails/${id}`}> */}
           <Button btnType="success" clicked={onShowDetails}>
             Details
           </Button>
-        </Link>
+        {/* </Link> */}
       </Router>
     </div>
   );
