@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { studentsData } from "../Data/Data";
+import {useParams} from "react-router-dom";
 
-const StudentDetails = ({ match }) => {
-
+const StudentDetails = () => {
+    let { id } = useParams();
 
   const [studentDetail ,setStudentDetail] =useState({});
   useEffect(() => {
-   const data= studentsData.filter(s => s.id === match.id);
-   setStudentDetail(data);
+      console.log(id)
+    const getData=()=>{
+        const data= studentsData.filter(s => s.id === id);
+        setStudentDetail(data);
+      }
+    getData();
   }, [])
+
   return (
     <>
       <h1>{studentDetail.id}</h1>

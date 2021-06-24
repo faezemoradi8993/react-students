@@ -1,13 +1,14 @@
 import React, { useState  , useEffect} from "react";
+import { BrowserRouter as Router , Switch , Route } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
 import Students from "./components/students/Students";
 import Button from "./components/layout/button/Button";
 import NewStudent from "./components/newStudent/NewStudent";
 import {studentsData} from "./components/Data/Data";
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import StudentDetails from "./components/StudentDetails/StudentDetails"
 
-import axios from "axios";
 
 function App() {
   
@@ -25,7 +26,7 @@ function App() {
  //get data from data component
 useEffect(() => {
  setStudents(studentsData);
-});
+},[]);
 
 
 
@@ -61,7 +62,7 @@ useEffect(() => {
     const newStudents = [...studentsState];
     newStudents.splice(index, 1);
     setStudents(newStudents);
-   toast(`${name}`+ "با موفقیت حذف شد", {
+   toast(`${name}با موفقیت حذف شد`, {
     position: "top-right",
     autoClose: 3000,
     hideProgressBar: false,
@@ -104,7 +105,7 @@ if ((studentName.length===0)||(studentEmail.length===0 )||(studentGrade.length==
     progress: undefined,
     })
  }else{
-  toast(`${studentName}`+ "با موفقیت اضافه شد", {
+  toast(`${studentName}با موفقیت اضافه شد`, {
     position: "top-right",
     autoClose: 3000,
     hideProgressBar: false,
@@ -140,6 +141,9 @@ const showMoreStudents =()=>{
 }
 
   return (
+    <Router>
+      <Switch>
+      <Route path="/StudentDetails/:id" component={StudentDetails} />  
     <div className="app">
       <ToastContainer/>
       <NewStudent
@@ -169,6 +173,8 @@ const showMoreStudents =()=>{
         more
       </Button>
     </div>
+         </Switch>
+    </Router>
   );
 }
 

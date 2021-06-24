@@ -1,8 +1,9 @@
 import React from "react";
 import Button from "../layout/button/Button";
 import "./Student.css";
-// import { Link } from "react-router-dom";
-// import { Router } from "react-router";
+import { Link  , BrowserRouter as Router} from "react-router-dom";
+// import { Router ,Route } from "react-router";
+
 
 const Student = ({
   id,
@@ -39,13 +40,14 @@ const Student = ({
       <Button clicked={clicked} btnType="danger">
         Delete
       </Button>
-      {/* <Router> */}
-        {/* <Link to={`/studentDetails/:${id}`}> */}
+      <Router >
+    
+        <Link to={`/StudentDetails/${id}`}>
           <Button btnType="success" clicked={onShowDetails}>
             Details
           </Button>
-        {/* </Link> */}
-      {/* </Router> */}
+        </Link>
+      </Router>
     </div>
   );
 };
