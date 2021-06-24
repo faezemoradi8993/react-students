@@ -1,5 +1,5 @@
 import React, { useState  , useEffect} from "react";
-import { BrowserRouter as Router , Switch , Route } from 'react-router-dom';
+import { Switch , Route ,useHistory} from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
@@ -8,10 +8,11 @@ import Button from "./components/layout/button/Button";
 import NewStudent from "./components/newStudent/NewStudent";
 import {studentsData} from "./components/Data/Data";
 import StudentDetails from "./components/StudentDetails/StudentDetails"
+import axios from "axios";
 
 
 function App() {
-  
+  const history = useHistory();
 
   // states
   const [studentsState, setStudents] = useState([]);
@@ -25,9 +26,12 @@ function App() {
 
  //get data from data component
 useEffect(() => {
+request();
  setStudents(studentsData);
 },[]);
-
+const  request = async()=>{
+await axios.get("https://jsonplaceholder.typicode.com/posts").then(res=>console.log(res)).catch(err=>console.error(err));
+}
 
 
   // changeNameHandler
@@ -132,8 +136,10 @@ if ((studentName.length===0)||(studentEmail.length===0 )||(studentGrade.length==
   };
   // onShowDetails
   const onShowDetails =(match)=>{
-console.log(match);
-console.log(match.id);
+// console.log(match);
+// console.log(match.id);
+
+history.push(`/StudentDetails/${match.id}`, { id: match.id, name: match.name,grade :match.grade ,email : match.email  });
   }
   //showMoreStudents
 const showMoreStudents =()=>{
@@ -141,7 +147,7 @@ const showMoreStudents =()=>{
 }
 
   return (
-    <Router>
+   
       <Switch>
       <Route path="/StudentDetails/:id" component={StudentDetails} />  
     <div className="app">
@@ -174,7 +180,7 @@ const showMoreStudents =()=>{
       </Button>
     </div>
          </Switch>
-    </Router>
+    
   );
 }
 
