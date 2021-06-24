@@ -1,23 +1,34 @@
-import React, { useState } from "react";
+import React, { useState  , useEffect} from "react";
+import { BrowserRouter as Router , Switch , Route } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
 import Students from "./components/students/Students";
 import Button from "./components/layout/button/Button";
 import NewStudent from "./components/newStudent/NewStudent";
+import {studentsData} from "./components/Data/Data";
+import StudentDetails from "./components/StudentDetails/StudentDetails"
+
 
 function App() {
-  // states
-  const [studentsState, setStudents] = useState([
-    { id: 0, name: "reza", grade: 20, email: "faeze.moradi8993@hmail.com" },
-    { id: 1, name: "ali", grade: 19, email: "fateme.nosrati@hmail.com" },
-    { id: 2, name: "mohammad", grade: 20, email: "ali.masoomi@hmail.com" },
-    { id: 3, name: "hosein", grade: 18, email: "reza.raisi@hmail.com" },
-  ]);
-  const [toggle, setToggle] = useState(true); //for change display
-  const [studentName, setStudentName] = useState(""); //for add new student
-  const [studentGrade, setStudentGrade] = useState(""); //for add new student
-  const [studentEmail, setStudentEmail] = useState(""); //for add new student
+  
 
-  // event handlers
+  // states
+  const [studentsState, setStudents] = useState([]);
+  //for change display
+  const [toggle, setToggle] = useState(true);
+  //for add new student
+  const [studentName, setStudentName] = useState(""); 
+  const [studentGrade, setStudentGrade] = useState(""); 
+  const [studentEmail, setStudentEmail] = useState("");
+  const [studentVisible, setStudentVisible] = useState(5);
+
+ //get data from data component
+useEffect(() => {
+ setStudents(studentsData);
+},[]);
+
+
 
   // changeNameHandler
   const changeNameHandler = (event, id) => {
@@ -46,12 +57,23 @@ function App() {
   };
 
   // deleteStudentHandler
-  const deleteStudentHandler = (index) => {
-    console.log(index);
+  const deleteStudentHandler = (index , name) => {
+    console.log(name);
     const newStudents = [...studentsState];
     newStudents.splice(index, 1);
     setStudents(newStudents);
+   toast(`${name}با موفقیت حذف شد`, {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    })
+
   };
+
 
   // change display handler (toggle)
   const toggleHandler = () => {
@@ -71,20 +93,59 @@ function App() {
   };
   const addNewStudent = () => {
     const newStudents = [...studentsState];
-    newStudents.push({
-      id: studentsState.length,
-      name: studentName,
-      grade: studentGrade,
-      email: studentEmail,
+    //check input not empty 
+if ((studentName.length===0)||(studentEmail.length===0 )||(studentGrade.length===0)) {
+  toast("اطلاعات را کامل وارد کنید", {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    })
+ }else{
+  toast(`${studentName}با موفقیت اضافه شد`, {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
     });
-    setStudents(newStudents);
-    setStudentName("");
-    setStudentGrade("");
-    setStudentEmail("");
+  newStudents.push({
+    //id is max of studentsState's id + 1
+    id:  Math.max.apply(Math, studentsState.map(i=>i.id))+1,
+    name: studentName ,
+    grade: studentGrade,
+    email: studentEmail,
+  });
+  setStudents(newStudents);
+  setStudentName("");
+  setStudentGrade("");
+  setStudentEmail("");
+};
+
+
+   
   };
+  // onShowDetails
+  const onShowDetails =(match)=>{
+console.log(match);
+console.log(match.id);
+  }
+  //showMoreStudents
+const showMoreStudents =()=>{
+  setStudentVisible(prevValue => prevValue + 5)
+}
 
   return (
+    <Router>
+      <Switch>
+      <Route path="/StudentDetails/:id" component={StudentDetails} />  
     <div className="app">
+      <ToastContainer/>
       <NewStudent
         studentName={studentName}
         studentGrade={studentGrade}
@@ -93,6 +154,7 @@ function App() {
         setGradeHandler={setGradeHandler}
         setEmailHandler={setEmailHandler}
         addNewStudent={addNewStudent}
+       
       />
       <Button btnType="success" clicked={toggleHandler}>
         Change Display
@@ -104,8 +166,15 @@ function App() {
         onechangeEmail={changeEmailHandler}
         clicked={deleteStudentHandler}
         toggle={toggle}
+        studentVisible={studentVisible}
+        onShowDetails={onShowDetails}
       />
+        <Button btnType="success" clicked={showMoreStudents}>
+        more
+      </Button>
     </div>
+         </Switch>
+    </Router>
   );
 }
 

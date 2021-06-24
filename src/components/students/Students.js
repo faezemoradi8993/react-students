@@ -2,6 +2,7 @@ import React from "react";
 import Student from "../student/Student";
 import "./students.css";
 
+
 const Students = ({
   onechangeName,
   onechangeGrade,
@@ -9,12 +10,14 @@ const Students = ({
   clicked,
   students,
   toggle,
+  studentVisible,
+    onShowDetails,
 }) => {
   //for change display i used toggle
   if (toggle) {
     return (
       <div className="other-display-students">
-        {students.map((student,index) => (
+        {students.slice(0,studentVisible).map((student,index) => (
           <Student
             key={index}
             id={student.id}
@@ -24,7 +27,9 @@ const Students = ({
             onechangeName={(event) => onechangeName(event, student.id)}
             onechangeGrade={(event) => onechangeGrade(event, student.id)}
             onechangeEmail={(event) => onechangeEmail(event, student.id)}
-            clicked={() => clicked(index)}
+            clicked={() => clicked(index ,student.name )}
+            onShowDetails={()=>onShowDetails(student)}
+         
           />
         ))}
       </div>
@@ -32,7 +37,7 @@ const Students = ({
   }
   return (
     <div className="students">
-      {students.map((student) => (
+      {students.slice(0,studentVisible).map((student,index) => (
         <Student
           key={student.id}
           id={student.id}
@@ -42,7 +47,7 @@ const Students = ({
           onechangeName={(event) => onechangeName(event, student.id)}
           onechangeGrade={(event) => onechangeGrade(event, student.id)}
           onechangeEmail={(event) => onechangeEmail(event, student.id)}
-          clicked={clicked}
+          clicked={() => clicked(index ,student.name )}
         />
       ))}
     </div>
